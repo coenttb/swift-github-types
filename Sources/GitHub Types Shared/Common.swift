@@ -5,6 +5,8 @@
 //  Created by Coen ten Thije Boonkkamp on 22/08/2025.
 //
 
+import TypesFoundation
+
 extension GitHub {
     // Common timestamp type used across GitHub API
     public typealias Timestamp = Date
@@ -152,9 +154,11 @@ extension GitHub {
         }
     }
     
-    public struct Owner: Codable, Equatable, Sendable {
+    public struct Owner: Codable, Equatable, Sendable, Identifiable {
+        public typealias ID = Tagged<Self, Int>
+        
+        public let id: Owner.ID
         public let login: String
-        public let id: Int
         public let nodeId: String
         public let avatarUrl: URL
         public let gravatarId: String
@@ -163,9 +167,19 @@ extension GitHub {
         public let type: String
         public let siteAdmin: Bool
         
-        public init(login: String, id: Int, nodeId: String, avatarUrl: URL, gravatarId: String, url: URL, htmlUrl: URL, type: String, siteAdmin: Bool) {
-            self.login = login
+        public init(
+            id: Owner.ID,
+            login: String,
+            nodeId: String,
+            avatarUrl: URL,
+            gravatarId: String,
+            url: URL,
+            htmlUrl: URL,
+            type: String,
+            siteAdmin: Bool
+        ) {
             self.id = id
+            self.login = login
             self.nodeId = nodeId
             self.avatarUrl = avatarUrl
             self.gravatarId = gravatarId
