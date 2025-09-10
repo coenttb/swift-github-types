@@ -9,6 +9,7 @@ import GitHub_Types_Shared
 import GitHub_Traffic_Types
 import GitHub_Repositories_Types
 import GitHub_Stargazers_Types
+import GitHub_OAuth_Types
 
 // https://docs.github.com/en/rest?apiVersion=2022-11-28
 extension GitHub {
@@ -18,6 +19,7 @@ extension GitHub {
         case traffic(Traffic.API)
         case repositories(Repositories.API)
         case stargazers(Stargazers.API)
+        case oauth(OAuth.API)
     }
 }
 
@@ -37,6 +39,10 @@ extension GitHub.API {
                 
                 URLRouting.Route(.case(GitHub.API.stargazers)) {
                     GitHub.Stargazers.API.Router()
+                }
+                
+                URLRouting.Route(.case(GitHub.API.oauth)) {
+                    GitHub.OAuth.API.Router()
                 }
             }
         }

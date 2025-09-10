@@ -9,6 +9,7 @@ import GitHub_Types_Shared
 import GitHub_Traffic_Types
 import GitHub_Repositories_Types
 import GitHub_Stargazers_Types
+import GitHub_OAuth_Types
 
 // https://docs.github.com/en/rest?apiVersion=2022-11-28
 extension GitHub {
@@ -17,15 +18,18 @@ extension GitHub {
         public var traffic: Traffic.Client
         public var repositories: Repositories.Client
         public var stargazers: Stargazers.Client
+        public var oauth: OAuth.Client
         
         public init(
             traffic: Traffic.Client,
             repositories: Repositories.Client,
-            stargazers: Stargazers.Client
+            stargazers: Stargazers.Client,
+            oauth: OAuth.Client
         ) {
             self.traffic = traffic
             self.repositories = repositories
             self.stargazers = stargazers
+            self.oauth = oauth
         }
     }
 }
