@@ -82,7 +82,7 @@ extension GitHub.OAuth {
         public let id: Int
         public let login: String
         public let name: String?
-        public let email: String?
+        public let email: EmailAddress?
         public let avatarUrl: String?
         public let bio: String?
         public let company: String?

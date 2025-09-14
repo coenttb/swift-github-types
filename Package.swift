@@ -8,6 +8,7 @@ extension String {
     static let githubRepositoriesTypes: Self = "GitHub Repositories Types"
     static let githubStargazersTypes: Self = "GitHub Stargazers Types"
     static let githubOAuthTypes: Self = "GitHub OAuth Types"
+    static let githubCollaboratorsTypes: Self = "GitHub Collaborators Types"
     static let githubIssuesTypes: Self = "GitHub Issues Types"
     static let githubPullRequestsTypes: Self = "GitHub Pull Requests Types"
     static let githubActionsTypes: Self = "GitHub Actions Types"
@@ -23,6 +24,7 @@ extension Target.Dependency {
     static var githubRepositoriesTypes: Self { .target(name: .githubRepositoriesTypes) }
     static var githubStargazersTypes: Self { .target(name: .githubStargazersTypes) }
     static var githubOAuthTypes: Self { .target(name: .githubOAuthTypes) }
+    static var githubCollaboratorsTypes: Self { .target(name: .githubCollaboratorsTypes) }
     static var githubIssuesTypes: Self { .target(name: .githubIssuesTypes) }
     static var githubPullRequestsTypes: Self { .target(name: .githubPullRequestsTypes) }
     static var githubActionsTypes: Self { .target(name: .githubActionsTypes) }
@@ -50,6 +52,7 @@ let package = Package(
         .library(name: .githubRepositoriesTypes, targets: [.githubRepositoriesTypes]),
         .library(name: .githubStargazersTypes, targets: [.githubStargazersTypes]),
         .library(name: .githubOAuthTypes, targets: [.githubOAuthTypes]),
+        .library(name: .githubCollaboratorsTypes, targets: [.githubCollaboratorsTypes]),
         .library(name: .githubTypesShared, targets: [.githubTypesShared])
     ],
     dependencies: [
@@ -75,6 +78,7 @@ let package = Package(
                 .githubRepositoriesTypes,
                 .githubStargazersTypes,
                 .githubOAuthTypes,
+                .githubCollaboratorsTypes,
                 .dependenciesMacros
             ]
         ),
@@ -107,6 +111,15 @@ let package = Package(
         ),
         .target(
             name: .githubOAuthTypes,
+            dependencies: [
+                .typesFoundation,
+                .githubTypesShared,
+                .dependenciesMacros,
+                .tagged
+            ]
+        ),
+        .target(
+            name: .githubCollaboratorsTypes,
             dependencies: [
                 .typesFoundation,
                 .githubTypesShared,

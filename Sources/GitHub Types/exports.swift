@@ -2,3 +2,4 @@
 @_exported import GitHub_Traffic_Types
 @_exported import GitHub_Repositories_Types
 @_exported import GitHub_Stargazers_Types
+@_exported import GitHub_Collaborators_Types
