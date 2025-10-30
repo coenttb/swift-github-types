@@ -3,6 +3,7 @@
 [![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://swift.org)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](https://github.com/coenttb/swift-github-types/releases)
+[![CI](https://github.com/coenttb/swift-github-types/workflows/CI/badge.svg)](https://github.com/coenttb/swift-github-types/actions/workflows/ci.yml)
 
 Type-safe Swift definitions for GitHub's REST API with dependency injection support.
 
