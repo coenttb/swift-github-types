@@ -8,7 +8,7 @@ struct GitHubRepositoriesTypesTests {
         let router = GitHub.Repositories.API.Router()
         
         // Test list endpoint
-        let listAPI = GitHub.Repositories.API.list
+        let listAPI = GitHub.Repositories.API.list(request: nil)
         let listURL = router.url(for: listAPI)
         #expect(listURL.path == "/user/repos")
         
