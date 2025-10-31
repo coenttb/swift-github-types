@@ -427,10 +427,19 @@ let getURL = router.url(for: getAPI)
 
 ## Related Packages
 
-- [swift-github-live](https://github.com/coenttb/swift-github-live) - Live HTTP implementations
-- [swift-github](https://github.com/coenttb/swift-github) - High-level client with dependency injection
-- [swift-dependencies](https://github.com/pointfreeco/swift-dependencies) - Dependency injection framework
-- [swift-types-foundation](https://github.com/coenttb/swift-types-foundation) - Foundation type extensions
+### Dependencies
+
+- [swift-types-foundation](https://github.com/coenttb/swift-types-foundation): A Swift package bundling essential type-safe packages for domain modeling.
+
+### Used By
+
+- [swift-github-live](https://github.com/coenttb/swift-github-live): A Swift package with live implementations for the GitHub API.
+- [swift-identities-github](https://github.com/coenttb/swift-identities-github): A Swift package integrating GitHub OAuth with swift-identities.
+
+### Third-Party Dependencies
+
+- [pointfreeco/swift-dependencies](https://github.com/pointfreeco/swift-dependencies): A dependency management library for controlling dependencies in Swift.
+- [pointfreeco/swift-tagged](https://github.com/pointfreeco/swift-tagged): A wrapper type for safer, expressive code.
 
 ## Requirements
 
