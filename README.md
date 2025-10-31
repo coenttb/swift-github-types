@@ -11,13 +11,13 @@ Type-safe Swift definitions for GitHub's REST API with dependency injection supp
 
 `swift-github-types` provides comprehensive type definitions for GitHub's REST API, including:
 
-- 📊 **Traffic Analytics**: Repository views, clones, paths, and referrers
-- ⭐ **Stargazers**: Star tracking with timestamps
-- 📦 **Repositories**: Full repository management (create, read, update, delete, list)
-- 👥 **Collaborators**: Repository collaboration and permissions
-- 🔐 **OAuth**: GitHub OAuth flow types
-- 🎯 **Type Safety**: Strongly-typed models with Codable conformance
-- 🔌 **Dependency Injection**: Using swift-dependencies for testability
+- **Traffic Analytics**: Repository views, clones, paths, and referrers
+- **Stargazers**: Star tracking with timestamps
+- **Repositories**: Full repository management (create, read, update, delete, list)
+- **Collaborators**: Repository collaboration and permissions
+- **OAuth**: GitHub OAuth flow types
+- **Type Safety**: Strongly-typed models with Codable conformance
+- **Dependency Injection**: Using swift-dependencies for testability
 
 ## Installation
 
