@@ -14,26 +14,26 @@ import GitHub_Types_Shared
 
 // https://docs.github.com/en/rest?apiVersion=2022-11-28
 extension GitHub {
-  @DependencyClient
-  public struct Client: Sendable {
-    public var traffic: Traffic.Client
-    public var repositories: Repositories.Client
-    public var stargazers: Stargazers.Client
-    public var oauth: OAuth.Client
-    public var collaborators: Collaborators.Client
+    @DependencyClient
+    public struct Client: Sendable {
+        public var traffic: Traffic.Client
+        public var repositories: Repositories.Client
+        public var stargazers: Stargazers.Client
+        public var oauth: OAuth.Client
+        public var collaborators: Collaborators.Client
 
-    public init(
-      traffic: Traffic.Client,
-      repositories: Repositories.Client,
-      stargazers: Stargazers.Client,
-      oauth: OAuth.Client,
-      collaborators: Collaborators.Client
-    ) {
-      self.traffic = traffic
-      self.repositories = repositories
-      self.stargazers = stargazers
-      self.oauth = oauth
-      self.collaborators = collaborators
+        public init(
+            traffic: Traffic.Client,
+            repositories: Repositories.Client,
+            stargazers: Stargazers.Client,
+            oauth: OAuth.Client,
+            collaborators: Collaborators.Client
+        ) {
+            self.traffic = traffic
+            self.repositories = repositories
+            self.stargazers = stargazers
+            self.oauth = oauth
+            self.collaborators = collaborators
+        }
     }
-  }
 }
