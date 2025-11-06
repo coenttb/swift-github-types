@@ -35,16 +35,20 @@ extension Target.Dependency {
 }
 
 extension Target.Dependency {
-    static var dependenciesMacros: Self { .product(name: "DependenciesMacros", package: "swift-dependencies") }
+    static var dependenciesMacros: Self {
+        .product(name: "DependenciesMacros", package: "swift-dependencies")
+    }
     static var tagged: Self { .product(name: "Tagged", package: "swift-tagged") }
-    static var typesFoundation: Self { .product(name: "TypesFoundation", package: "swift-types-foundation") }
+    static var typesFoundation: Self {
+        .product(name: "TypesFoundation", package: "swift-types-foundation")
+    }
 }
 
 let package = Package(
     name: "swift-github-types",
     platforms: [
         .macOS(.v14),
-        .iOS(.v17)
+        .iOS(.v17),
     ],
     products: [
         .library(name: .githubTypes, targets: [.githubTypes]),
@@ -53,12 +57,12 @@ let package = Package(
         .library(name: .githubStargazersTypes, targets: [.githubStargazersTypes]),
         .library(name: .githubOAuthTypes, targets: [.githubOAuthTypes]),
         .library(name: .githubCollaboratorsTypes, targets: [.githubCollaboratorsTypes]),
-        .library(name: .githubTypesShared, targets: [.githubTypesShared])
+        .library(name: .githubTypesShared, targets: [.githubTypesShared]),
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.9.2"),
         .package(url: "https://github.com/pointfreeco/swift-tagged", from: "0.10.0"),
-        .package(url: "https://github.com/coenttb/swift-types-foundation", from: "0.0.1")
+        .package(url: "https://github.com/coenttb/swift-types-foundation", from: "0.0.1"),
     ],
     targets: [
         .target(
@@ -66,7 +70,7 @@ let package = Package(
             dependencies: [
                 .typesFoundation,
                 .dependenciesMacros,
-                .tagged
+                .tagged,
             ]
         ),
         .target(
@@ -79,7 +83,7 @@ let package = Package(
                 .githubStargazersTypes,
                 .githubOAuthTypes,
                 .githubCollaboratorsTypes,
-                .dependenciesMacros
+                .dependenciesMacros,
             ]
         ),
         .target(
@@ -88,7 +92,7 @@ let package = Package(
                 .typesFoundation,
                 .githubTypesShared,
                 .dependenciesMacros,
-                .tagged
+                .tagged,
             ]
         ),
         .target(
@@ -97,7 +101,7 @@ let package = Package(
                 .typesFoundation,
                 .githubTypesShared,
                 .dependenciesMacros,
-                .tagged
+                .tagged,
             ]
         ),
         .target(
@@ -106,7 +110,7 @@ let package = Package(
                 .typesFoundation,
                 .githubTypesShared,
                 .dependenciesMacros,
-                .tagged
+                .tagged,
             ]
         ),
         .target(
@@ -115,7 +119,7 @@ let package = Package(
                 .typesFoundation,
                 .githubTypesShared,
                 .dependenciesMacros,
-                .tagged
+                .tagged,
             ]
         ),
         .target(
@@ -124,7 +128,7 @@ let package = Package(
                 .typesFoundation,
                 .githubTypesShared,
                 .dependenciesMacros,
-                .tagged
+                .tagged,
             ]
         ),
         .testTarget(
@@ -138,7 +142,7 @@ let package = Package(
         .testTarget(
             name: "GitHub Repositories Types Tests",
             dependencies: [.githubRepositoriesTypes]
-        )
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
